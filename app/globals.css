@@ -36,7 +36,7 @@
     }
 
     .dark {
-      --background: 222.2 84% 4.9%;
+      --background: 0 0% 4.9%;
       --foreground: 210 40% 98%;
 
       --card: 222.2 84% 4.9%;
@@ -54,7 +54,7 @@
       --muted: 217.2 32.6% 17.5%;
       --muted-foreground: 215 20.2% 65.1%;
 
-      --accent: 217.2 32.6% 17.5%;
+      --accent: 72 100% 56%
       --accent-foreground: 210 40% 98%;
 
       --destructive: 0 62.8% 30.6%;
@@ -72,5 +72,9 @@
     }
     body {
       @apply bg-background text-foreground;
+      font-family: var(--font-public-sans);
+    }
+    h1, .footer, .neo-btn {
+      font-family: var(--font-ibm-plex-mono);
     }
   }

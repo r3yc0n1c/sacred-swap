@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { Public_Sans, IBM_Plex_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import MetaDataJSON from "@/data/meta.json";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const opensans = Open_Sans({ 
-  subsets: ["latin"], 
+const PUBLIC_SANS = Public_Sans({
+  subsets: ["latin"],
   display: "swap",
-  variable: "--font-opensans" 
+  variable: "--font-public-sans"
 });
 
-const versina = localFont({
-  src: [{
-    path: "../public/assets/fonts/Versina-ExtraBold.woff2",
-    weight: "700"
-  }],
-  variable: "--font-versina"
-})
+const IBM_PLEX_MONO = IBM_Plex_Mono({
+  weight: ['400', '600'],
+  subsets: ["latin"],
+  variable: '--font-ibm-plex-mono',
+});
 
 export const metadata: Metadata = {
   title: MetaDataJSON.title,
@@ -29,8 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${versina.variable} ${opensans.className}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${PUBLIC_SANS.variable} ${IBM_PLEX_MONO.variable}`}>
+      <body className="dark">
+        <Navbar />
+        {children}
+        <Footer/>
+      </body>
     </html>
   );
 }
