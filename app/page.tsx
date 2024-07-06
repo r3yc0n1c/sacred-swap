@@ -1,9 +1,19 @@
+import Footer from "@/components/Footer";
+import JoinWaitlist from "@/components/JoinWaitlist";
 import Image from "next/image";
+
+export const metadata = {
+  description: 'Swap.',
+  openGraph: {
+    type: 'website'
+  }
+};
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Welcome to Sacred Swap!!!
-    </main>
+    <>
+      <JoinWaitlist />
+      <Footer/>
+    </>
   );
 }
