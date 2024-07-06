@@ -33,7 +33,6 @@ export default function RootLayout({
       <body className="dark">
         <Navbar />
         {children}
-        <Footer/>
       </body>
     </html>
   );
